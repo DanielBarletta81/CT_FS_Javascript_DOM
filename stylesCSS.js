@@ -7,30 +7,26 @@
 
 
 document.addEventListener('click', function(event) {
-    if (event.target.id === '.box') {
-      changeColor();
+    if (event.target.id === 'box') {
+        changeColor();
     }
-  });
+});
 
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
-  function changeColor() {
+function changeBoxColor() {
     const randomColor = getRandomColor();
     const boxElement = document.getElementById('box');
-    boxElement.style.background = randomColor;
-  
-    // Function to generate a random color
-  
-  function getRandomColor() {
-      const letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
+    boxElement.style.backgroundColor = randomColor;
     console.log("Random Color:", randomColor);
-  };
-
+}
 
 
 //Task 3: Implement additional styling changes based on user interaction, such as mouse hover
@@ -61,61 +57,72 @@ document.addEventListener('mouseenter', () => {
 
       });
     }
+  });
+         // Function to generate a random color
 
+
+     function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+        return color;
+  };
+    console.log("Random Color:", randomColor);
+}
+
+
+const ids = ["name", "email", "message"];
+
+ids.forEach(id => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.addEventListener("mouseout", function() {
+      console.log("Clicked element with id:", id);
+      // Your event handling logic here
+    });
+  }
 });
 
-    // Function to generate a random color
+
+  document.addEventListener('mouseout', function(event) {
+    if (event.target.id === 'name' || event.target.id === 'email' || event.target.id === 'message') {
+        changeColorBack();
+    }
+});
 
 
-  function getRandomColor() {
-      const letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+
+ function changeColorBack() {
+    const randomColor = getRandomColor();
+    elementIds = ['name', 'email', 'message']; //update after the DOM is loaded.
+    elementIds.forEach(id => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.addEventListener('mouseout', () => {
+          element.style.backgroundColor = randomColor;
+        });
       }
-      return color;
-    }
-    console.log("Random Color:", randomColor);
-  };
+    });
 
-
-  
-  elementIds = [];
-
- document.addEventListener('mouseleave', function(event) {
-    if (event.target.id === 'name'|| 'email' || 'message') {
-      changeColorBack();
-    }
-  });
-   
-  //update after the DOM is loaded.
-
-  elementIds.forEach(id => {
-    const element = document.getElementById(id);
-  
-    if (element) {
-      element.addEventListener('mouseleave', () => {
-        // change background color on mouse leave
-       changeColorBack();
-      });
-    }
-  });
-  console.log(elementIds);  // log the array
-
-// change background color back to white
-function changeColorBack(element) {
-    if(element) {
-        element.style.backgroundColor = 'white';
-        console.log("Color Changed Back");
-    }
-};
-
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      console.log("Random Color:", randomColor);
+    };
+ 
 
 
   document.addEventListener('click', function(event) {
     if (event.target.id === 'button') {
       growButton();
-
+   
     }
   });
 
@@ -128,3 +135,14 @@ function changeColorBack(element) {
     }
 };
 
+document.addEventListener('mouseenter', function(event) {
+    if (event.target.id === 'card') {
+      const navElement = document.getElementById('card');
+      if (navElement) {
+        navElement.style.backgroundColor = 'blue';
+        navElement.style.color = '#fff';
+        navElement.style.border = '15px solid #000';
+        console.log("Card Changed");
+      }
+    }
+  });

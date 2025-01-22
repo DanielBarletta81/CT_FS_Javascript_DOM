@@ -35,18 +35,18 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Remember Me</label>
         </div>
-        <button id="button" onclick="growButton()" type="submit" class="btn btn-primary mb-5">Submit</button>
+        <button id="button" onmouseover="changeColor()" onclick="growButton()" type="submit" class="btn btn-primary mb-5">Submit</button>
       </form>
 
 
    <!-- Task 1: Create an HTML structure with at least 5 elements that will be styled dynamically.-->   
   
-  <h3 id="header">CSS Styling</h3>
+  <h3 id="header" class="text-center">CSS Styling</h3>
 
-  <div class="container">
+  <div class="container m-3 p-3">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
+    <nav  id="nav" class="navbar navbar-expand-lg bg-body-tertiary">
+     
         <a class="navbar-brand" id="nav-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -67,16 +67,16 @@
             </li>
           </ul>
         </div>
-      </div>
+    
     </nav>
 
           <div class="row">
 
               <div class="col-md-4">
 
-    <div class="card" id="card">
+    <div class="card justify-content-center" id="card" onmouseenter="changeColor()">
 
-      <img src="img/goldfish.jpg" alt="goldfish" class="card-img-top" id="card-img">
+      <img onmouseenter="changeColor()" src="img/goldfish.jpg" alt="goldfish" class="card-img-top" id="card-img">
   
           </div>
 
@@ -87,7 +87,7 @@
 
 
 
-   <div id="box" onclick="changeColor()">Click me to change color</div>
+   <div id="box" onclick="changeBoxColor()">Click me to change color</div>
 
   </div>
 
