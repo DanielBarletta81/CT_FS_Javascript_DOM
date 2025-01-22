@@ -47,7 +47,14 @@ Task 1: Create an HTML form with input fields for the user's name, email, and me
 
 Task 2: Write JavaScript code to handle form submissions and store user input in an object.
 
+for (const element of dataObj) {
+    dataObj
+    
+  }
 
+   formData.forEach((value, key) => {
+        dataObj[key] = value;
+  });
 
 Task 3: Implement form validation to ensure that all required fields are filled before submission.
 
@@ -74,19 +81,39 @@ in response to user actions or events triggered by JavaScript functions.
 
 Task 1: Create an HTML structure with at least 5 elements that will be styled dynamically.
 
-<div id="box" onclick="changeColor()">Click me to change color</div>
+<div id="box" onclick="changeColor()
+">Click me to change color</div>
 
-
-
+Done
 
 Task 2: Write JavaScript code to dynamically change the color of the box element when clicked.
 
 
-
+Done
 
 Task 3: Implement additional styling changes based on user interaction, such as mouse hover
  effects or button clicks on different HTML elements.
 
+
+
+
+
+
+function setup() {
+  const elementIds = document.getElementById("myElement");
+  const myButton = document.getElementById("myButton");
+  myButton.onclick = () => changeColor(elementIds); // Pass elementIds to changeColor
+}
+
+function changeColor(elementIds) {
+  if (!elementIds) {
+    console.error("Element not found");
+    return;
+  }
+
+  const randomColor = getRandomColor();
+  elementIds.style.background = randomColor;
+}
 
 
 
@@ -97,3 +124,4 @@ JavaScript code successfully changes the color of the box element when clicked, 
  a visual feedback mechanism.
 Additional styling changes, such as mouse hover effects or button clicks, are implemented
  to enhance user experience and engagement.
+
